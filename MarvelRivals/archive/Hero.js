@@ -1,0 +1,43 @@
+// Hero.js
+const heroData = {
+    1046: { hero_id: 1046, name: "Adam Warlock", icon: "/heroes/adam-warlock.png", class: 3 },
+    1026: { hero_id: 1026, name: "Black Panther", icon: "/heroes/black-panther.png", class: 2 },
+    1018: { hero_id: 1018, name: "Doctor Strange", icon: "/heroes/dr-strange.png", class: 1 },
+    1027: { hero_id: 1027, name: "Groot", icon: "/heroes/groot.png", class: 1 },
+    1024: { hero_id: 1024, name: "Hela", icon: "/heroes/hela.png", class: 2 },
+    1011: { hero_id: 1011, name: "Hulk", icon: "/heroes/hulk.png", class: 1 },
+    1034: { hero_id: 1034, name: "Iron Man", icon: "/heroes/iron-man.png", class: 2 },
+    1047: { hero_id: 1047, name: "Jeff The Land Shark", icon: "/heroes/jeff-the-land-shark.png", class: 3 },
+    1016: { hero_id: 1016, name: "Loki", icon: "/heroes/loki.png", class: 3 },
+    1031: { hero_id: 1031, name: "Luna Snow", icon: "/heroes/luna-snow.png", class: 3 },
+    1029: { hero_id: 1029, name: "Magik", icon: "/heroes/magik.png", class: 2 },
+    1037: { hero_id: 1037, name: "Magneto", icon: "/heroes/magneto.png", class: 1 },
+    1020: { hero_id: 1020, name: "Mantis", icon: "/heroes/mantis.png", class: 3 },
+    1045: { hero_id: 1045, name: "Namor", icon: "/heroes/namor.png", class: 2 },
+    1042: { hero_id: 1042, name: "Peni Parker", icon: "/heroes/peni-parker.png", class: 1 },
+    1014: { hero_id: 1014, name: "The Punisher", icon: "/heroes/punisher.png", class: 2 },
+    1023: { hero_id: 1023, name: "Rocket Raccoon", icon: "/heroes/rocket-raccon.png", class: 3 },
+    1038: { hero_id: 1038, name: "Scarlet Witch", icon: "/heroes/scarlet-witch.png", class: 2 },
+    1043: { hero_id: 1043, name: "Star Lord", icon: "/heroes/star-lord.png", class: 2 },
+    1015: { hero_id: 1015, name: "Storm", icon: "/heroes/storm.png", class: 2 },
+    1039: { hero_id: 1039, name: "Thor", icon: "/heroes/thor.png", class: 1 },
+    1035: { hero_id: 1035, name: "Venom", icon: "/heroes/venom.png", class: 1 },
+    1036: { hero_id: 1036, name: "Spider Man", icon: "/heroes/spider-man.png", class: 2 },
+    1049: { hero_id: 1049, name: "Wolverine", icon: "N/A", class: 2 },
+    1025: { hero_id: 1025, name: "Cloak & Dagger", icon: "N/A", class: 3 },
+    1052: { hero_id: 1052, name: "Iron Fist", icon: "N/A", class: 2 },
+    1021: { hero_id: 1021, name: "Hawkeye", icon: "N/A", class: 2 },
+    1030: { hero_id: 1030, name: "Moon Knight", icon: "N/A", class: 2 },
+    1048: { hero_id: 1048, name: "Psylocke", icon: "N/A", class: 2 },
+    1032: { hero_id: 1032, name: "Squirrel Girl", icon: "N/A", class: 2 },
+    1041: { hero_id: 1041, name: "Winter Soldier", icon: "N/A", class: 2 },
+    1033: { hero_id: 1033, name: "Black Widow", icon: "N/A", class: 2 },
+    1022: { hero_id: 1022, name: "Captain America", icon: "N/A", class: 1 },
+    1040: { hero_id: 1040, name: "Mister Fantastic", icon: "N/A", class: 2 },
+    1050: { hero_id: 1050, name: "Invisible Woman", icon: "N/A", class: 3 },
+    1017: { hero_id: 1017, name: "Human Torch", icon: "N/A", class: 2 },
+    1051: { hero_id: 1051, name: "The Thing", icon: "N/A", class: 1 }
+};
+
+// Make available globally
+window.heroData = heroData;

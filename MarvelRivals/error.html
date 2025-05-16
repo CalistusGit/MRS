@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="MarvelRivals.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-image">
+
+    <div class="sticky-top">
+        <div class="container-fluid">
+            <a href="http://localhost:63342/eindopdrachtJava/error.html?_ijt=oh4b1j8rh65ogn9ir5mdvdcl5s&_ij_reload=RELOAD_ON_SAVE">
+                <img width="64px" src="https://media.discordapp.net/attachments/1129144497805197374/1208033523966148628/esdrfghjk.png?ex=65e1cfe4&is=65cf5ae4&hm=0acf38bc0456ed66fada3b85c5369f0e7107c0c0668011d24944abeb56e38a66&=&format=webp&quality=lossless&width=937&height=937" class="navbar-brand" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="search-container">
+        <h1 class="search-title">MarvelRivals</h1>
+        <h2 id="error" class="search-subtitle">No Player found!</h2>
+        <form id="search-form" onsubmit="search(); return false;">
+            <div class="search-input-container">
+                <div class="input-group mb-3">
+                    <input id="search-input-field" type="text" class="form-control" placeholder="Card's name" aria-label="Card's name" aria-describedby="button-addon2">
+                    <button class="btn btn-warning" type="submit" id="button-addon2">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="search-results-container container text-center">
+            <div class="row" style="padding-left: 8%;">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+async function search() {
+    try {
+        // Clear previous search results
+        clearSearchResults();
+
+        // Get the character's name from the search input field
+        const characterName = document.getElementById('search-input-field').value;
+
+        // Construct the API URL with the player name
+        const apiUrl = `https://thingproxy.freeboard.io/fetch/https://rivalsmeta.com/api/player/${encodeURIComponent(characterName)}?season=2`;
+
+        // Fetch player information from the API
+        const response = await axios.get(apiUrl);
+
+        const playerData = response.data;
+
+        const searchResultsContainerRow = document.querySelector('.search-results-container .row');
+
+        // Clear any previous error messages
+        const errorMessage = document.getElementById('error');
+        errorMessage.textContent = '';
+
+        if (characterName.toLowerCase() === 'spell') {
+            console.log('Redirecting to UID.html');
+            alert('Redirection triggered');
+            window.location.href = 'http://localhost:63342/Marvel%20Rivals/UID.html';
+            return;
+        }
+
+        // Check if data is available
+        console.log(response.status)
+        if (response.status !== 200) {
+            errorMessage.textContent = 'No player data was found!. <a href="http://localhost:63342/Marvel%20Rivals/UID.html">Try this</a>';
+            console.log('no1')
+        } else {
+            // Display player information
+            console.log('playerData:', playerData);
+
+            const playerElement = document.createElement('div');
+            playerElement.innerHTML = `
+            <div class="infobox">
+            <h2 class="title">Player Information</h2>
+            <h3 class="player">Name: ${playerData.player.info.name || 'Unknown'}</h3>
+            <h3 class="player">Season Rank: ${playerData.stats.total_matches || 'Unknown'}</h3>
+            <br>
+            <h2 class="title">Unranked </h2>
+            <h3 class="player">Games Played: ${playerData.stats.total_matches || 'Unknown'}</h3>
+            <h3 class="player">Wins: ${playerData.stats.total_wins || 'Unknown'}</h3>
+            <h3 class="player">Losses: ${(playerData.stats.total_matches && playerData.stats.total_wins) ? playerData.stats.total_matches - playerData.stats.total_wins : 'Unknown'}</h3>
+            <h3 class="player">Win Rate: ${(playerData.stats.total_matches && playerData.stats.total_wins) ? ((playerData.stats.total_wins / playerData.stats.total_matches) * 100).toFixed(2) + '%' : 'Unknown'}</h3>
+            <br>
+            <h2 class="title">Ranked </h2>
+            <h3 class="player">Games Played: ${playerData.stats.ranked_matches || 'Unknown'}</h3>
+            <h3 class="player">Wins: ${playerData.stats.ranked_matches_wins || 'Unknown'}</h3>
+            <h3 class="player">Losses: ${(playerData.stats.ranked_matches && playerData.stats.ranked_matches_wins) ? playerData.stats.ranked_matches - playerData.stats.ranked_matches_wins : 'Unknown'}</h3>
+            <h3 class="player">Win Rate: ${(playerData.stats.ranked_matches && playerData.stats.ranked_matches_wins) ? ((playerData.stats.ranked_matches_wins / playerData.stats.ranked_matches) * 100).toFixed(2) + '%' : 'Unknown'}</h3>
+            
+            </div>
+`;
+            searchResultsContainerRow.appendChild(playerElement);
+
+        }
+    } catch (error) {
+        const errorMessage = document.getElementById('error');
+        errorMessage.innerHTML = 'No player data was found! <a href="http://localhost:63342/Marvel%20Rivals/UID.html">Try this</a>';
+        console.error('Error fetching player data:', error);
+    }
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function clearSearchResults() {
+    const searchResultsContainerRow = document.querySelector('.search-results-container .row');
+    searchResultsContainerRow.innerHTML = '';
+}
